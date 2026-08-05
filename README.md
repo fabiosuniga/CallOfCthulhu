@@ -7,7 +7,6 @@ Criado para facilitar a vida na mesa de jogo, este sistema remove a carga matem�
 ---
 
 ## Visão Geral
-<!-- Substitua a tag abaixo pelo link ou caminho da imagem do print da tela inicial -->
 <img width="1600" height="694" alt="d45f42f1-6fcc-4d96-8300-44e619f9d6f9" src="https://github.com/user-attachments/assets/7a43cbb7-f18b-4f55-8161-ab08b5e17646" />
 *Tela inicial do sistema listando os investigadores ativos e seus respectivos jogadores.*
 
@@ -42,7 +41,14 @@ Durante as sessões de jogo, a agilidade é fundamental. O aplicativo foi desenh
 * **Controle de Status em Tempo Real:** Botões de ação rápida diretamente na página do investigador permitem aplicar Dano, Cura ou Perda de Sanidade com um clique, atualizando o banco de dados na hora.
 * **Gestão de Elenco:** Controle organizado vinculando perfeitamente cada ficha ao seu respectivo jogador, mantendo a base de dados limpa e a tela inicial (Lista de Investigadores) sempre organizada.
 
+### Assistente IA de Regras (Imersão Total)
+Para garantir que o fluxo da mesa nunca trave por causa de dúvidas mecânicas, a aplicação conta com um assistente integrado construído com o **Oracle Agent**. Muito mais do que um manual digital, a IA foi configurada para entregar explicações e esclarecer regras **diretamente para o seu personagem**. Isso significa que as consultas ao sistema e os ganchos de investigação são transmitidos sem quebrar o *roleplay* ou a tensão da narrativa, mantendo a atmosfera sombria perfeitamente intacta!
 ---
 
+## Ficha do Investigador
+<img width="1600" height="732" alt="dcef4860-5de5-4900-a5b3-87e1f79dcb15" src="https://github.com/user-attachments/assets/f302ccd9-e36e-490c-87bb-c3dcecc5d820" />
+*Tela para visualização e gerenciamento da ficha do seu investigador (devido a praticidade cortei as perícias do print, mas também estão listadas lá).*
+
+---
 ## 🚀 Como Executar o Projeto
 Em breve publicarei o site na internet, por enquanto está rodando nos servidores da APEX, caso queira testar entre em contato comigo que crio um cadastro pra você!
