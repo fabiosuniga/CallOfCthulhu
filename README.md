@@ -8,21 +8,21 @@ Criado para facilitar a vida na mesa de jogo, este sistema remove a carga matem�
 
 ## Visão Geral
 <!-- Substitua a tag abaixo pelo link ou caminho da imagem do print da tela inicial -->
-![Tela Inicial do Aplicativo](https://drive.google.com/file/d/1Um33QVMiVNRrS9ESpUi7ow6Cr7tJRBi2/view?usp=sharing)
+![Tela Inicial do Aplicativo](<img width="1600" height="694" alt="d45f42f1-6fcc-4d96-8300-44e619f9d6f9" src="https://github.com/user-attachments/assets/12b04c9e-e44f-4ffd-89a1-d07ffe515ffa" />)
 *Tela inicial do sistema listando os investigadores ativos e seus respectivos jogadores.*
 
 ---
 
 ## Tecnologias Utilizadas
+
+![Oracle APEX](https://img.shields.io/badge/Oracle_APEX-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![PL/SQL](https://img.shields.io/badge/PL/SQL-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+
 O projeto foi desenvolvido unindo um banco de dados relacional robusto com uma interface responsiva e dinâmica:
-
-
-
-
-
-* ![Oracle APEX](https://img.shields.io/badge/Oracle_APEX-F80000?style=for-the-badge&logo=oracle&logoColor=white) Estruturação da aplicação, interface de usuário (UI) e navegação (como fluxos Master-Detail e Interactive Reports).
-* ![PL/SQL](https://img.shields.io/badge/PL/SQL-F80000?style=for-the-badge&logo=oracle&logoColor=white) Lógica de back-end no banco de dados, utilizando *Triggers* para automatizar cálculos e garantir a integridade dos atributos.
-* ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) Interatividade no front-end, possibilitando Ações Dinâmicas (Dynamic Actions) e atualizações na tela sem necessidade de recarregar a página.
+* **Oracle APEX:** Estruturação da aplicação, interface de usuário (UI) e navegação (como fluxos Master-Detail e Interactive Reports).
+* **PL/SQL:** Lógica de back-end no banco de dados, utilizando *Triggers* para automatizar cálculos e garantir a integridade dos atributos.
+* **JavaScript:** Interatividade no front-end, possibilitando Ações Dinâmicas (Dynamic Actions) e atualizações na tela sem necessidade de recarregar a página.
 
 ---
 
