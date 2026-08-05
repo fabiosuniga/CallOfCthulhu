@@ -1,0 +1,50 @@
+DECLARE
+    v_info_ficha VARCHAR2(4000);
+BEGIN
+    -- Monta um resumo completo com os principais dados da ficha do investigador atual
+    SELECT 
+        'ID Investigador: ' || id_investigador || 
+        ', Nome: ' || nome || 
+        ', Ocupação: ' || ocupacao || 
+        ', Idade: ' || idade || 
+        ', FOR: ' || attr_for || 
+        ', CON: ' || attr_con || 
+        ', TAM: ' || attr_tam || 
+        ', DES: ' || attr_des || 
+        ', APA: ' || attr_apa || 
+        ', INT: ' || attr_int || 
+        ', POD: ' || attr_pod || 
+        ', EDU: ' || attr_edu || 
+        ', Sorte Atual: ' || sorte_atual || 
+        ', Vida Atual: ' || hp_atual || '/' || hp_max || 
+        ', Sanidade Atual: ' || san_atual || '/' || san_max || 
+        ', Magia Atual: ' || mp_atual || '/' || mp_max || 
+        ', Bônus de Dano: ' || bonus_dano || 
+        ', Corpo: ' || corpo || 
+        ', História Pessoal: ' || historia_pessoal || 
+        ', Descrição: ' || descricao || 
+        ', Características: ' || caracteristicas || 
+        ', Ideologia/Crenças: ' || ideologiacrencas || 
+        ', Ferimentos: ' || ferimentos || 
+        ', Pessoas: ' || pessoas || 
+        ', Fobias: ' || fobias || 
+        ', Locais: ' || locais || 
+        ', Magia e Feitiços: ' || magia || 
+        ', Pertences: ' || pertences || 
+        ', Encontros: ' || encontro
+        
+    INTO v_info_ficha
+    FROM TB_INVESTIGADOR
+    WHERE id_investigador = :P5_ID_INVESTIGADOR;
+
+    :P5_RESPOSTA := APEX_AI.GENERATE(
+        p_prompt            => :P5_PERGUNTA, 
+        p_system_prompt     => 'Você é um mestre experiente, um pouco cínico e atmosférico de Call of Cthulhu 7e (Sétima Edição apenas!). ' || 
+                               'Aqui estão os dados completos da ficha do Investigador que está conversando com você: [' || v_info_ficha || ']. ' || 
+                               'Responda apenas a perguntas sobre regras, dúvidas e questões da mecânica de jogo. Não se prolonge muito nas respostas, seja meio termo ' ||
+                               'Use os dados da ficha para dar um tom mais personalizado, dramático ou irônico nas respostas. ' ||
+                               'Se perguntarem sobre assuntos não relacionados a RPG ou Call of Cthulhu 7e (Sétima Edição apenas!), recuse educadamente. ' || 
+                               'Chame o investigador pelo nome e trate-o conforme o estado atual da ficha dele.', 
+        p_service_static_id => 'cohere-oci'
+    ); 
+END;
