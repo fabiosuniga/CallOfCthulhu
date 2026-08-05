@@ -8,7 +8,7 @@ Criado para facilitar a vida na mesa de jogo, este sistema remove a carga matem√
 
 ## Vis√£o Geral
 <!-- Substitua a tag abaixo pelo link ou caminho da imagem do print da tela inicial -->
-![Tela Inicial do Aplicativo](<img width="1600" height="694" alt="d45f42f1-6fcc-4d96-8300-44e619f9d6f9" src="https://github.com/user-attachments/assets/12b04c9e-e44f-4ffd-89a1-d07ffe515ffa" />)
+<img width="1600" height="694" alt="d45f42f1-6fcc-4d96-8300-44e619f9d6f9" src="https://github.com/user-attachments/assets/7a43cbb7-f18b-4f55-8161-ab08b5e17646" />
 *Tela inicial do sistema listando os investigadores ativos e seus respectivos jogadores.*
 
 ---
