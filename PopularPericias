@@ -1,0 +1,21 @@
+create or replace TRIGGER trg_popular_pericias
+AFTER INSERT ON tb_investigador
+FOR EACH ROW
+BEGIN
+    -- Faz um loop passando por TODAS as perícias cadastradas no jogo
+    FOR p IN (SELECT id_pericia FROM tb_pericia_base) LOOP
+        -- Insere a perícia para o investigador recém-criado, com 0 pontos adicionais
+        INSERT INTO tb_investigador_pericia (
+            id_investigador,
+            id_pericia,
+            pontos_alocados,
+            marcador_evolucao
+        ) VALUES (
+            :NEW.id_investigador,
+            p.id_pericia,
+            0,
+            0
+        );
+    END LOOP;
+END;
+/
