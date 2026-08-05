@@ -1,0 +1,56 @@
+create or replace TRIGGER trg_calc_status_investigador
+BEFORE INSERT OR UPDATE OF attr_for, attr_con, attr_tam, attr_pod ON tb_investigador
+FOR EACH ROW
+DECLARE
+    v_for_tam NUMBER; -- Variável temporária para guardar a soma
+BEGIN
+    -- Cálculos de HP (CON + TAM / 10)
+    IF :NEW.attr_con IS NOT NULL AND :NEW.attr_tam IS NOT NULL THEN
+        :NEW.hp_max := FLOOR((:NEW.attr_con + :NEW.attr_tam) / 10);
+        IF INSERTING AND :NEW.hp_atual IS NULL THEN
+            :NEW.hp_atual := :NEW.hp_max;
+        END IF;
+    END IF;
+
+    -- Cálculos de MP e Sanidade Base
+    IF :NEW.attr_pod IS NOT NULL THEN
+        :NEW.mp_max := FLOOR(:NEW.attr_pod / 5);
+        IF INSERTING AND :NEW.mp_atual IS NULL THEN
+            :NEW.mp_atual := :NEW.mp_max;
+        END IF;
+        IF INSERTING AND :NEW.san_atual IS NULL THEN
+            :NEW.san_atual := :NEW.attr_pod;
+            :NEW.san_max := 99;
+        END IF;
+    END IF;
+
+    -- Bônus de Dano e Corpo
+    IF :NEW.attr_for IS NOT NULL AND :NEW.attr_tam IS NOT NULL THEN
+        v_for_tam := :NEW.attr_for + :NEW.attr_tam;
+        
+        IF v_for_tam <= 64 THEN
+            :NEW.bonus_dano := '-2';
+            :NEW.corpo := -2;
+        ELSIF v_for_tam <= 84 THEN
+            :NEW.bonus_dano := '-1';
+            :NEW.corpo := -1;
+        ELSIF v_for_tam <= 124 THEN
+            :NEW.bonus_dano := '0';
+            :NEW.corpo := 0;
+        ELSIF v_for_tam <= 164 THEN
+            :NEW.bonus_dano := '+1d4';
+            :NEW.corpo := 1;
+        ELSIF v_for_tam <= 204 THEN
+            :NEW.bonus_dano := '+1d6';
+            :NEW.corpo := 2;
+        ELSIF v_for_tam <= 284 THEN
+            :NEW.bonus_dano := '+2d6';
+            :NEW.corpo := 3;
+        ELSE
+            -- Para casos onde os investigadores passam dos limites humanos (magia/artefatos)
+            :NEW.bonus_dano := '+3d6'; 
+            :NEW.corpo := 4;
+        END IF;
+    END IF;
+END;
+/
