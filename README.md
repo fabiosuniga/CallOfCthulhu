@@ -42,12 +42,15 @@ Durante as sessões de jogo, a agilidade é fundamental. O aplicativo foi desenh
 * **Gestão de Elenco:** Controle organizado vinculando perfeitamente cada ficha ao seu respectivo jogador, mantendo a base de dados limpa e a tela inicial (Lista de Investigadores) sempre organizada.
 
 ### Assistente IA de Regras (Imersão Total)
-Para garantir que o fluxo da mesa nunca trave por causa de dúvidas mecânicas, a aplicação conta com um assistente integrado construído com o **Oracle Agent**. Muito mais do que um manual digital, a IA foi configurada para entregar explicações e esclarecer regras **diretamente para o seu personagem**. Isso significa que as consultas ao sistema e os ganchos de investigação são transmitidos sem quebrar o *roleplay* ou a tensão da narrativa, mantendo a atmosfera sombria perfeitamente intacta!
+Para garantir que o fluxo da mesa nunca trave por dúvidas mecânicas, a aplicação conta com um assistente integrado construído com o **Oracle Agent**:
+* **Respostas In-Character:** A IA entrega explicações e regras conversando diretamente com o seu personagem.
+* **Foco no Roleplay:** Consultas ao sistema e ganchos de investigação são transmitidos sem quebrar a atuação da mesa.
+* **Atmosfera Intacta:** Mantém a tensão e o horror da narrativa perfeitamente preservados.
 ---
 
 ## Ficha do Investigador
 <img width="1600" height="732" alt="dcef4860-5de5-4900-a5b3-87e1f79dcb15" src="https://github.com/user-attachments/assets/f302ccd9-e36e-490c-87bb-c3dcecc5d820" />
-*Tela para visualização e gerenciamento da ficha do seu investigador (devido a praticidade cortei as perícias do print, mas também estão listadas lá).*
+*Tela para visualização e gerenciamento da ficha do seu investigador (devido a praticidade cortei as perícias do print, mas também estão listadas lá juntamente com características e arsenal).*
 
 ---
 ## 🚀 Como Executar o Projeto
