@@ -1,0 +1,30 @@
+--Query em SQL que lista todas as perícias
+
+SELECT 
+    ip.ROWID,
+    ip.id_investigador,
+    ip.id_pericia,
+    pb.nome AS nome_pericia,
+    CASE 
+        WHEN pb.nome = 'Esquiva' THEN FLOOR(inv.attr_des / 2)
+        WHEN pb.nome = 'Língua Nativa' THEN inv.attr_edu
+        ELSE pb.valor_base 
+    END AS valor_base,
+    ip.pontos_alocados,
+    (CASE 
+        WHEN pb.nome = 'Esquiva' THEN FLOOR(inv.attr_des / 2)
+        WHEN pb.nome = 'Língua Nativa' THEN inv.attr_edu
+        ELSE pb.valor_base 
+    END + NVL(ip.pontos_alocados, 0)) AS valor_total,
+    ip.marcador_evolucao
+FROM tb_investigador_pericia ip
+JOIN tb_pericia_base pb ON ip.id_pericia = pb.id_pericia
+JOIN tb_investigador inv ON ip.id_investigador = inv.id_investigador
+WHERE ip.id_investigador = :P3_ID_INVESTIGADOR
+
+--Javascript que exibe na tela o valor base da perícia, pontos alocados e o valor final (base + alocados)
+
+(function() { var $row = $(this.triggeringElement).closest('tr');
+var base = parseInt($row.find('[data-column-name="VALOR_BASE"]').text()) || 0;
+var pontos = parseInt($row.find('input[name*="PONTOS_ALOCADOS"]').val()) || 0;
+return base + pontos; }).call(this)
